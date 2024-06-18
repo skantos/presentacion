@@ -36,27 +36,15 @@ function typeWriter() {
 typeWriter();
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    const carouselImages = document.querySelector('.carousel-images');
-    const images = document.querySelectorAll('.carousel-images img');
-    const totalImages = images.length;
-    let currentIndex = 0;
-    const intervalTime = 4000; // 4 segundos por imagen
-
-    function moveToNextImage() {
-        currentIndex++;
-        if (currentIndex === totalImages / 2) {
-            carouselImages.style.transition = 'none';
-            carouselImages.style.transform = 'translateX(0)';
-            currentIndex = 0;
-            setTimeout(() => {
-                carouselImages.style.transition = 'transform 1s ease';
-                moveToNextImage();
-            }, 50);
+    const carousel = document.querySelector('.carousel ul');
+    let interval = setInterval(() => {
+        let currentMargin = parseInt(window.getComputedStyle(carousel).marginLeft);
+        if (currentMargin <= -300 * (carousel.children.length - 1)) {
+            carousel.style.marginLeft = '0%';
         } else {
-            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carousel.style.marginLeft = `${currentMargin - 100}%`;
         }
-    }
-
-    setInterval(moveToNextImage, intervalTime);
+    }, 4000); // Adjust the timing as needed
 });
