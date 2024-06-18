@@ -41,7 +41,9 @@ footer {
 
 .carousel-container {
   grid-area: sidebar;
-  background-color: blueviolet;
+  background-image: url(./multimedia/slider1.jpg);
+  max-width: 100vw;
+  max-height: px;
   overflow: hidden;
   position: relative;
 }
@@ -95,39 +97,26 @@ nav {
 
 .carousel {
   width: 100%;
-  height: 1280px;
+  height: 100%;
   overflow: hidden;
-  animation: slide 4s infinite alternate ;
 }
 
 .carousel ul {
   display: flex;
   padding: 0;
   margin: auto;
-  width: 400%;
 }
 
 .carousel li {
   list-style: none;
   width: 100%;
+  height: 100%;
 }
 
 .carousel img {
   width: 100%;
-}
-
-@keyframes slide {
-  0% { margin-left: 0%; }
-  20% { margin-left: 0%; }
-
-  25% { margin-left: -100%; }
-  45% { margin-left: -100%;}
-
-  50% { margin-left: -200%; }
-  70% { margin-left: -200%; }
-
-  75% { margin-left: -300%; }
-  95% { margin-left: -300%; }
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Tarjetas */
