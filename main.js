@@ -5,8 +5,13 @@ burger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-
-const texts = ["Hola, soy samuel gajardo", "Programador Front End", "Y mi amigo erick alvarez", "me contrato para desarrollar esta pagina", "en contra de mi voluntad "];
+const texts = [
+    "Hola, soy Samuel Gajardo", 
+    "Programador Front End", 
+    "Y mi amigo Erick Alvarez", 
+    "me contrató para desarrollar esta página", 
+    "en contra de mi voluntad"
+];
 let index = 0;
 let isDeleting = false;
 let currentTextIndex = 0;
@@ -35,16 +40,30 @@ function typeWriter() {
 
 typeWriter();
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel ul');
-    let interval = setInterval(() => {
-        let currentMargin = parseInt(window.getComputedStyle(carousel).marginLeft);
-        if (currentMargin <= -300 * (carousel.children.length - 1)) {
-            carousel.style.marginLeft = '0%';
-        } else {
-            carousel.style.marginLeft = `${currentMargin - 100}%`;
-        }
-    }, 4000); // Adjust the timing as needed
+var swyper = new Swper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+        },
+    },
 });

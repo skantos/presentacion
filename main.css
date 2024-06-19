@@ -1,12 +1,23 @@
-body {
+* {
+  text-decoration: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(
+    rgba(204,204,204,1)0%,
+    rgba(238,238,238,1)50%,
+  );
+}
+
 .layout {
   display: grid;
-  grid-template-rows: 60px 1000px 600px 1000px 250px;
+  grid-template-rows: 60px 852px 950px 1000px 250px;
   grid-template-areas: 
       "header"
       "sidebar"
@@ -18,7 +29,7 @@ body {
 
 @media (min-width: 768px) {
   .layout {
-      grid-template-rows: 60px 1000px 600px 1000px  250px;
+      grid-template-rows: 60px 852px 950px 1000px 250px;
       grid-template-columns: 160px auto;
       grid-template-areas: 
           "header header"
@@ -31,43 +42,97 @@ body {
 
 header {
   grid-area: header;
-  background-color: red;
+  background-color: #B2B2FD;
 }
 
 footer {
   grid-area: footer;
-  background-color: coral;
+  background-color: #F5F5F5;
 }
 
-.carousel-container {
+.container {
   grid-area: sidebar;
   background-image: url(./multimedia/slider1.jpg);
-  max-width: 100vw;
-  max-height: px;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.telar {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.telar h1, .telar h2 {
+  font-size: 3em;
+  margin: 0.5rem 0;
 }
 
 .aside1 {
   grid-area: aside1;
-  background-color: yellow;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #F5F5F5;
 }
+
+.viaje {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  padding: 0 20px;
+  text-transform: capitalize;
+  color: #000;
+  font-size: 18px;
+}
+
+
+
+.desktop {
+  text-align: center;
+  z-index: 1;
+}
+
+.desktop img {
+  margin-top: 40px;
+  width: 800px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 main {
   grid-area: main;
-  background-color: brown;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 nav {
-  background: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,32 +156,10 @@ nav {
 
 .center-video {
   display: block;
+  height: 500px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.carousel {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.carousel ul {
-  display: flex;
-  padding: 0;
-  margin: auto;
-}
-
-.carousel li {
-  list-style: none;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* Tarjetas */
@@ -154,11 +197,19 @@ nav {
   color: grey;
 }
 
+.mostrador{
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .card {
   background-color: white;
   margin: 20px;
   color: black;
-  width: 300px;
+  width: 250px;
   max-height: 330px;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -183,6 +234,33 @@ nav {
 }
 
 /* .delete class should be removed or used for actual purpose */
-.delete {
+.delete1 {
   background-color: #b2b2fd;
+  background-image: url(./multimedia/carta1.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+.delete2 {
+  background-color: #b2b2fd;
+  background-image: url(./multimedia/carta2.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+.delete3 {
+  background-color: #b2b2fd;
+  background-image: url(./multimedia/carta3.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+.delete4 {
+  background-color: #b2b2fd;
+  background-image: url(./multimedia/carta4.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+.delete5 {
+  background-color: #b2b2fd;
+  background-image: url(./multimedia/carta5.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
